@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Energy ETL Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏢 Urban Energy ETL Dashboard</h1>
+            <p class="subtitle">Real-time Energy Consumption Analytics</p>
+        </header>
+
+        <!-- Statistics Cards -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value">{{ stats.total_records }}</div>
+                <div class="stat-label">Total Records</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ stats.num_buildings }}</div>
+                <div class="stat-label">Buildings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ "%.1f"|format(stats.avg_energy) }} kWh</div>
+                <div class="stat-label">Avg Energy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ stats.max_energy }} kWh</div>
+                <div class="stat-label">Max Energy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ "%.1f"|format(stats.avg_temp) }}°C</div>
+                <div class="stat-label">Avg Temp</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ stats.date_range }}</div>
+                <div class="stat-label">Data Range</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-grid">
+            <!-- Energy Consumption Chart -->
+            <div class="chart-container">
+                <h2>Energy Consumption Trend</h2>
+                <div class="chart">
+                    {{ energy_chart|safe }}
+                </div>
+            </div>
+
+            <!-- Building Comparison Chart -->
+            <div class="chart-container">
+                <h2>Energy by Building</h2>
+                <div class="chart">
+                    {{ building_chart|safe }}
+                </div>
+            </div>
+
+            <!-- Temperature Chart -->
+            <div class="chart-container">
+                <h2>Temperature Pattern</h2>
+                <div class="chart">
+                    {{ temperature_chart|safe }}
+                </div>
+            </div>
+
+            <!-- Occupancy Distribution Chart -->
+            <div class="chart-container">
+                <h2>Occupancy Distribution</h2>
+                <div class="chart">
+                    {{ occupancy_chart|safe }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Urban Energy ETL Pipeline | Last Updated: <span id="timestamp"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Update timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        // Auto-refresh every 30 seconds
+        // setTimeout(() => location.reload(), 30000);
+    </script>
+</body>
+</html>

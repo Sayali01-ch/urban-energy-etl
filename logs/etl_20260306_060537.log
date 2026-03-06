@@ -1,0 +1,18 @@
+2026-03-06 06:05:37,188 - src.extractors.csv_extractor - INFO - Extracting data from /tmp/tmp01mwqw5s/test.csv
+2026-03-06 06:05:37,188 - src.extractors.csv_extractor - INFO - Reading file: /tmp/tmp01mwqw5s/test.csv
+2026-03-06 06:05:37,189 - src.extractors.csv_extractor - INFO - Successfully extracted 3 rows
+2026-03-06 06:05:37,193 - src.extractors.csv_extractor - INFO - Extracting data from /tmp/tmp_5fkpif9
+2026-03-06 06:05:37,193 - src.extractors.csv_extractor - INFO - Reading file: /tmp/tmp_5fkpif9/test_0.csv
+2026-03-06 06:05:37,194 - src.extractors.csv_extractor - INFO - Reading file: /tmp/tmp_5fkpif9/test_1.csv
+2026-03-06 06:05:37,195 - src.extractors.csv_extractor - INFO - Reading file: /tmp/tmp_5fkpif9/test_2.csv
+2026-03-06 06:05:37,196 - src.extractors.csv_extractor - INFO - Successfully extracted 15 rows
+2026-03-06 06:05:37,197 - src.extractors.csv_extractor - INFO - Extracting data from /tmp/tmp8le94479
+2026-03-06 06:05:37,197 - src.extractors.csv_extractor - WARNING - No CSV files found in /tmp/tmp8le94479
+2026-03-06 06:05:37,199 - src.transformers.energy_transformer - INFO - Starting data transformation
+2026-03-06 06:05:37,203 - src.transformers.energy_transformer - INFO - Transformation complete: 3 rows processed
+2026-03-06 06:05:37,204 - src.transformers.energy_transformer - INFO - Starting data transformation
+2026-03-06 06:05:37,205 - src.transformers.energy_transformer - INFO - Removed 1 duplicate rows
+2026-03-06 06:05:37,206 - src.transformers.energy_transformer - INFO - Transformation complete: 2 rows processed
+2026-03-06 06:05:37,207 - src.transformers.energy_transformer - INFO - Starting data transformation
+2026-03-06 06:05:37,208 - src.transformers.energy_transformer - INFO - Found 1 missing values
+2026-03-06 06:05:37,210 - src.transformers.energy_transformer - INFO - Transformation complete: 3 rows processed
